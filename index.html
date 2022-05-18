@@ -884,23 +884,58 @@ blockquote {
 .checkbox-off {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: hidden;
+}
+
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+#navigationbar{
+	padding: 30px 0px;
+	display: flex;
+	justify-content: start;
+	gap: 20px;
+}
+
+#navigationbar img{
+	height: 10px;
+}
 
 .navLink{
-	margin-right: 10px;
 	color: rgb(175, 4, 4);
+	text-decoration: none;
 }
-.navLink:hover{
+.activeNav, .navLink:hover{
 	color: green;
+	font-style: normal;
 }
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+
+
+@media screen and (min-width: 900px) {
+	#navigationbar{
+	position: sticky;
+	top: 0px;
+	background-color: white;
+	border-bottom: 1px solid rgb(144, 163, 221);
+	z-index: 100;
+}
+}
+
 
   </style>
 </head>
 
 <body>
 <article id="3a7bc165-2bfa-4cf1-8c72-910b55e93859" class="page sans"><header><div class="page-header-icon undefined" style="margin-top: 80px;"><span class="icon">🤟</span></div><h1 class="page-title">Chintan Karki</h1></header><div class="page-body"><p id="2fc3667f-d491-4db0-bedd-183325060ce5" class="">
-</p><p id="cfabfb4a-a93b-489e-8b0a-cbb9309113e5" class="">Hi there! </p><p id="cf9d1c9b-741b-46cd-a049-b535b856f3b5" class="">Welcome to my portfolio 😃</p><p id="37c91e03-a274-4162-9eb7-170bcd1417aa" class="">Reach me at <mark class="highlight-purple_background"><a href="mailto:chintankarki@gmail.com">chintankarki@gmail.com</a></mark></p><p id="9989237c-2109-472b-8720-0dd1d02daf16" class="">Check out my <a href="https://www.linkedin.com/in/chintan-karki-735b731b2/">LinkedIn</a>🔗 and <a href="https://github.com/Chintan-Karki?tab=repositories">Github</a>😺</p><p id="4b098982-044b-4161-8a51-98f2aa8083b3" class="">
-</p><p id="f7c18c42-bc46-4099-9781-147d7b3e2c85" class=""></p>
-<nav class="navigation-bar"><a class="navLink" href="#my_story" class="block-color-gray"><strong>My story</strong></a><a class="navLink" href="#skills" class="block-color-gray"><strong>Skills</strong></a><a class="navLink" href="#education" class="block-color-gray"><strong>Education</strong></a><a class="navLink" href="#experience_and_achievements" class="block-color-gray"><strong>Experience &amp; Achievements</strong></a><a class="navLink" href="#projects" class="block-color-gray"><strong>Projects</strong></a><a class="navLink" href="#certifications" class="block-color-gray"><strong>Certifications</strong></a></nav>
+</p><p id="cfabfb4a-a93b-489e-8b0a-cbb9309113e5" class="">Hi there! </p><p id="cf9d1c9b-741b-46cd-a049-b535b856f3b5" class="">Welcome to my portfolio 😃</p><p id="37c91e03-a274-4162-9eb7-170bcd1417aa" class="">Reach me at <mark class="highlight-purple_background"><a href="mailto:chintankarki@gmail.com">chintankarki@gmail.com</a></mark></p><p id="9989237c-2109-472b-8720-0dd1d02daf16" class="">Check out my <a href="https://www.linkedin.com/in/chintan-karki-735b731b2/">LinkedIn</a>🔗 and <a href="https://github.com/Chintan-Karki?tab=repositories">Github</a>😺</p><p id="f7c18c42-bc46-4099-9781-147d7b3e2c85" class=""></p>
+<nav id="navigationbar" class="topnav"><a class="navLink activeNav" href="#my_story" class="block-color-gray"><strong>My story</strong></a><a class="navLink" href="#skills" class="block-color-gray"><strong>Skills</strong></a><a class="navLink" href="#education" class="block-color-gray"><strong>Education</strong></a><a class="navLink" href="#experience_and_achievements" class="block-color-gray"><strong>Experience &amp; Achievements</strong></a><a class="navLink" href="#projects" class="block-color-gray"><strong>Projects</strong></a><a class="navLink" href="#certifications" class="block-color-gray"><strong>Certifications</strong></a></nav>
 <p id="b0a2716b-07bc-49bc-8e19-ce819e37fc7f" class="">
 </p><div id="e2554d0f-d95a-4d36-8f96-2ee734f70f1b" class="column-list"><div id="2cfd4b4a-3f72-4d07-9568-50cd7a518239" style="width:75%" class="column"><blockquote id="2c4912f6-9fd4-4c82-89f1-f2c3ec71d05f" class=""><mark class="highlight-brown"><em>“Simplicity is the soul of efficiency.”</em></mark>
 <strong>- Austin Freeman</strong></blockquote><p id="076e6aab-2b3c-4a26-9f69-671576bfd026" class="">
@@ -948,12 +983,31 @@ blockquote {
 </p><p id="91ff2b9e-be34-4c35-9ab5-777e87c1221c" class="">
 </p><h3 id="acc2cbc4-a7a8-4bda-8666-b0e48bbb48fc" class="">To know more about me personally, you can also find me at :</h3><p id="692a95dd-a3ba-4df6-9305-e0238e16045a" class=""><a href="https://www.facebook.com/ChintanKarki/"><mark class="highlight-blue"><strong>Facebook</strong></mark></a></p><p id="3bc2b155-1cdc-4beb-86d2-cd19868cf780" class=""><a href="https://www.instagram.com/chintankarki/"><mark class="highlight-pink"><strong>Instagram</strong></mark></a></p><p id="a57b9d34-c116-4fc7-ad51-6c76bd5a474e" class=""><mark class="highlight-blue"><a href="https://twitter.com/KarkiChintan"><strong>Twitter</strong></a></mark><mark class="highlight-blue"><strong> </strong></mark></p><p id="8f24e0be-a2e8-40c9-b0f9-88d187570b17" class="">
 </p><p id="81155479-38f1-4f46-a8e2-c21eea5ac1e9" class="">
-</p><div id="17ce847a-ba5c-4737-b205-fe8e1466830b" class="column-list" style="align-items: center;"><div id="adcc4149-85e0-4675-8298-788214ad343b" style="width:68.75%" class="column"><h1 id="b48f42ea-68bd-4816-8186-508b83a4dda5" class="">I also have a few articles at medium 😀</h1></div><div id="303da746-6a97-4ad1-bfc3-229754906182" style="width:31.25%" class="column"><figure id="7ae41a1a-65b2-4243-8169-e5950d6060a4" class="image"><a href="images/Untitled%203.png"><img style="width:760px" src="images/Untitled%203.png"/></a></figure></div></div><hr id="60547f9f-c066-47d6-9397-6c7ceb827185"/><p id="e03947c5-6c7e-4ab5-93cd-9c20e89caf9d" class="">Feel free to read them at your leisure 👍</p><figure id="6b7b36c6-116e-4a85-ab7c-dca7736bb6a3"><a href="https://chintankarki.medium.com/the-world-as-it-will-be-bf7b8635b8aa" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The world as it will be</div><div class="bookmark-description">You might have already seen the 2004 movie &#x27;I, Robot&#x27; starring Will Smith, if not, it is highly recommended. It&#x27;s a movie where a techno-phobic cop investigates a crime that may have been perpetrated by a robot, which leads to a larger threat to humanity.</div></div><div class="bookmark-href">https://chintankarki.medium.com/the-world-as-it-will-be-bf7b8635b8aa</div></div><img src="https://miro.medium.com/max/474/1*MfBUjeWarK7R1wQ_qBLNag.jpeg" style="aspect-ratio: 16/9;" class="bookmark-image"/></a></figure><figure id="a8a4da50-6548-498a-89e6-faf222e18954"><a href="https://chintankarki.medium.com/the-lovely-ladies-memoirs-of-forgotten-pages-903bf8d11183" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Lovely Ladies Memoirs of forgotten pages</div><div class="bookmark-description">At the peak of the second world war, amidst a secret Bletchley Park in the 1940s, a team of scientists led by Alan Turing was working on the &quot;Thinking machine&quot;. Turing designed a particular machine code-named &#x27;Bombe&#x27; that could be instructed to run through combinations and recognize the pattern in data.</div></div><div class="bookmark-href">https://chintankarki.medium.com/the-lovely-ladies-memoirs-of-forgotten-pages-903bf8d11183</div></div><img src="https://miro.medium.com/max/1200/1*91qhFIS3hKUPPjqZrldKPQ.jpeg" class="bookmark-image"/></a></figure><p id="dfaf2ede-f073-46bb-abb3-fb5986b05d2a" class="">
+</p><div id="17ce847a-ba5c-4737-b205-fe8e1466830b" class="column-list" style="align-items: center;"><div id="adcc4149-85e0-4675-8298-788214ad343b" style="width:68.75%" class="column"><h1 id="b48f42ea-68bd-4816-8186-508b83a4dda5" class="">I also have a few articles at medium 😀</h1></div><div id="303da746-6a97-4ad1-bfc3-229754906182" style="width:31.25%" class="column"><figure id="7ae41a1a-65b2-4243-8169-e5950d6060a4" class="image"><a href="images/Untitled%203.png"><img style="width:760px" src="images/Untitled%203.png"/></a></figure></div></div><hr id="60547f9f-c066-47d6-9397-6c7ceb827185"/><p id="e03947c5-6c7e-4ab5-93cd-9c20e89caf9d" class="">Feel free to read them at your leisure 👍</p><figure id="6b7b36c6-116e-4a85-ab7c-dca7736bb6a3"><a href="https://chintankarki.medium.com/the-world-as-it-will-be-bf7b8635b8aa" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The world as it will be</div><div class="bookmark-description">You might have already seen the 2004 movie &#x27;I, Robot&#x27; starring Will Smith, if not, it is highly recommended. It&#x27;s a movie where a techno-phobic cop investigates a crime that may have been perpetrated by a robot, which leads to a larger threat to humanity.</div></div><div class="bookmark-href">https://chintankarki.medium.com/the-world-as-it-will-be-bf7b8635b8aa</div></div><img src="https://miro.medium.com/max/474/1*MfBUjeWarK7R1wQ_qBLNag.jpeg" style="aspect-ratio: 21/9;" class="bookmark-image"/></a></figure><figure id="a8a4da50-6548-498a-89e6-faf222e18954"><a href="https://chintankarki.medium.com/the-lovely-ladies-memoirs-of-forgotten-pages-903bf8d11183" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Lovely Ladies Memoirs of forgotten pages</div><div class="bookmark-description">At the peak of the second world war, amidst a secret Bletchley Park in the 1940s, a team of scientists led by Alan Turing was working on the &quot;Thinking machine&quot;. Turing designed a particular machine code-named &#x27;Bombe&#x27; that could be instructed to run through combinations and recognize the pattern in data.</div></div><div class="bookmark-href">https://chintankarki.medium.com/the-lovely-ladies-memoirs-of-forgotten-pages-903bf8d11183</div></div><img src="https://miro.medium.com/max/1200/1*91qhFIS3hKUPPjqZrldKPQ.jpeg" class="bookmark-image"/></a></figure><p id="dfaf2ede-f073-46bb-abb3-fb5986b05d2a" class="">
 </p><p id="895e15cd-3f77-4338-a160-1100031c09dc" class="">
 </p><hr id="b095d9c4-ce84-498b-bc55-bc66bf6e3703"/><h1 id="459410cc-2506-47f9-82b1-a6ab96cc54f7" class="" style="text-align: center;display: block; margin-top: 90px;"><strong>“You’re amazing 😀”</strong></h1><p id="607af35e-35c6-4140-b55e-0c6edb42b58c" class="">
 </p><h1 id="6ae1b55d-eea3-4278-9380-afee0eb1fbfb" class="" style="text-align: center;display: block;">👋🏻 I hope you have a good day,  Bye !!!</h1><p id="0da9861f-57ba-4080-91f4-c156cbc8178e" class="">
 </p></div></article>
-<script> var coll = document.getElementsByClassName("collapsible"); var i; for (i = 0; i < coll.length; i++) { coll[i].addEventListener("click", function () { this.classList.toggle("active"); var content = this.nextElementSibling; if (content.style.maxHeight) { content.style.maxHeight = null; } else { content.style.maxHeight = content.scrollHeight + "px"; } }); } </script>
+<script> var coll = document.getElementsByClassName("collapsible"); var i; for (i = 0; i < coll.length; i++) { coll[i].addEventListener("click", function () { this.classList.toggle("active"); var content = this.nextElementSibling; if (content.style.maxHeight) { content.style.maxHeight = null; } else { content.style.maxHeight = content.scrollHeight + "px"; } }); } 
+// Get the container element
+var btnContainer = document.getElementById("navigationbar");
+
+// Get all navs with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("navLink");
+console.log(btns)
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("activeNav");
+	console.log(current)
+    current[0].className = current[0].className.replace("activeNav", "");
+    this.className += " activeNav";
+	console.log("toggle")
+  });
+}
+
+</script>
 
 </body>
 
