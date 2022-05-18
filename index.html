@@ -79,7 +79,7 @@ h3 {
 
 h1 {
 	font-size: 1.875rem;
-	margin-top: 1.875rem;
+	padding-top: 2.75rem;
 }
 
 h2 {
@@ -895,6 +895,10 @@ blockquote {
   display: none;
 }
 
+:target {
+  scroll-padding-top: 130px;
+}
+
 #navigationbar{
 	padding: 30px 0px;
 	display: flex;
@@ -935,7 +939,7 @@ blockquote {
 <body>
 <article id="3a7bc165-2bfa-4cf1-8c72-910b55e93859" class="page sans"><header><div class="page-header-icon undefined" style="margin-top: 80px;"><span class="icon">🤟</span></div><h1 class="page-title">Chintan Karki</h1></header><div class="page-body"><p id="2fc3667f-d491-4db0-bedd-183325060ce5" class="">
 </p><p id="cfabfb4a-a93b-489e-8b0a-cbb9309113e5" class="">Hi there! </p><p id="cf9d1c9b-741b-46cd-a049-b535b856f3b5" class="">Welcome to my portfolio 😃</p><p id="37c91e03-a274-4162-9eb7-170bcd1417aa" class="">Reach me at <mark class="highlight-purple_background"><a href="mailto:chintankarki@gmail.com">chintankarki@gmail.com</a></mark></p><p id="9989237c-2109-472b-8720-0dd1d02daf16" class="">Check out my <a href="https://www.linkedin.com/in/chintan-karki-735b731b2/">LinkedIn</a>🔗 and <a href="https://github.com/Chintan-Karki?tab=repositories">Github</a>😺</p><p id="f7c18c42-bc46-4099-9781-147d7b3e2c85" class=""></p>
-<nav id="navigationbar" class="topnav"><a class="navLink activeNav" href="#my_story" class="block-color-gray"><strong>My story</strong></a><a class="navLink" href="#skills" class="block-color-gray"><strong>Skills</strong></a><a class="navLink" href="#education" class="block-color-gray"><strong>Education</strong></a><a class="navLink" href="#experience_and_achievements" class="block-color-gray"><strong>Experience &amp; Achievements</strong></a><a class="navLink" href="#projects" class="block-color-gray"><strong>Projects</strong></a><a class="navLink" href="#certifications" class="block-color-gray"><strong>Certifications</strong></a></nav>
+<nav id="navigationbar" class="topnav"><a class="navLink activeNav my_story" href="#my_story"  class="block-color-gray"><strong>My story</strong></a><a class="navLink education" href="#education" class="block-color-gray"><strong>Education</strong></a><a class="navLink skills" href="#skills" class="block-color-gray"><strong>Skills</strong></a><a class="navLink experience_and_achievements" href="#experience_and_achievements" class="block-color-gray"><strong>Experience &amp; Achievements</strong></a><a class="navLink projects" href="#projects" class="block-color-gray"><strong>Projects</strong></a><a class="navLink certifications" href="#certifications" class="block-color-gray"><strong>Certifications</strong></a></nav>
 <p id="b0a2716b-07bc-49bc-8e19-ce819e37fc7f" class="">
 </p><div id="e2554d0f-d95a-4d36-8f96-2ee734f70f1b" class="column-list"><div id="2cfd4b4a-3f72-4d07-9568-50cd7a518239" style="width:75%" class="column"><blockquote id="2c4912f6-9fd4-4c82-89f1-f2c3ec71d05f" class=""><mark class="highlight-brown"><em>“Simplicity is the soul of efficiency.”</em></mark>
 <strong>- Austin Freeman</strong></blockquote><p id="076e6aab-2b3c-4a26-9f69-671576bfd026" class="">
@@ -994,18 +998,35 @@ var btnContainer = document.getElementById("navigationbar");
 
 // Get all navs with class="btn" inside the container
 var btns = btnContainer.getElementsByClassName("navLink");
-console.log(btns)
 
 // Loop through the buttons and add the active class to the current/clicked button
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("activeNav");
-	console.log(current)
     current[0].className = current[0].className.replace("activeNav", "");
     this.className += " activeNav";
-	console.log("toggle")
   });
 }
+
+const sections = document.querySelectorAll("h1");
+const navLi = document.querySelectorAll("#navigationbar a");
+console.log(navLi)
+window.onscroll = () => {
+  var current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 60) {
+      current = section.getAttribute("id"); }
+  });
+
+  navLi.forEach((li) => {
+    li.classList.remove("activeNav");
+    if (li.classList.contains(current)) {
+      li.classList.add("activeNav");
+    }
+  });
+};
 
 </script>
 
