@@ -894,12 +894,71 @@ blockquote {
 	scroll-padding-top: 130px;
 }
 
-#navigationbar {
-	padding: 30px 0px;
+/* CSS */
+.btn-download {
+	align-items: center;
+	background-color: #e2ffdf;
+	border: 2px solid #111;
+	border-radius: 3px;
+	box-sizing: border-box;
+	color: #111;
+	cursor: pointer;
 	display: flex;
-	justify-content: start;
-	gap: 20px;
-	flex-wrap: wrap;
+	font-family: Inter, sans-serif;
+	font-size: 16px;
+	height: 48px;
+	justify-content: center;
+	line-height: 24px;
+	max-width: fit-content;
+	padding: 0 25px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.btn-download:after {
+	background-color: #111;
+	border-radius: 3px;
+	content: "";
+	display: block;
+	height: 48px;
+	left: 0;
+	width: 100%;
+	position: absolute;
+	top: -2px;
+	transform: translate(8px, 8px);
+	transition: transform 0.2s ease-out;
+	z-index: -1;
+}
+
+.btn-download:hover:after {
+	transform: translate(0, 0);
+	color: #111;
+}
+
+.btn-download:active {
+	background-color: #e2ffdf;
+	outline: 0;
+}
+
+.btn-download:hover {
+	outline: 0;
+}
+
+@media (min-width: 768px) {
+	.btn-download {
+		padding: 0 40px;
+	}
+}
+
+#navigationbar {
+	margin-top: -50px;
+	
+	display: none;
+	z-index: 1000;
 }
 
 #navigationbar img {
@@ -919,6 +978,14 @@ blockquote {
 
 @media screen and (min-width: 900px) {
 	#navigationbar {
+		margin-top: 30px;
+		padding: 30px 0px;
+		
+		display: flex;
+		justify-content: start;
+		gap: 20px;
+		flex-wrap: wrap;
+
 		position: sticky;
 		top: 0px;
 		background-color: white;
