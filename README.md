@@ -1,1 +1,0 @@
-# Chintan-Karki.github.io
