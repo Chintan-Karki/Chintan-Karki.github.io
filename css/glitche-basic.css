@@ -258,7 +258,7 @@ a {
 
 a:hover {
 	text-decoration: none;
-	color: #f26b38;
+	color: #1736a8;
 }
 
 /* 6. Buttons */
@@ -286,15 +286,15 @@ a.btn,
 a.btn.fill,
 .btn.fill {
 	color: #ffffff;
-	background: #f26b38;
-	border: 1px solid #f26b38;
+	background: #1736a8;
+	border: 1px solid #1736a8;
 }
 
 a.btn:hover,
 .btn:hover {
 	color: #ffffff;
-	background: #f26b38;
-	border: 1px solid #f26b38;
+	background: #1736a8;
+	border: 1px solid #1736a8;
 }
 
 /* 7. Preloader */
@@ -309,13 +309,13 @@ a.btn:hover,
 }
 
 .preloader .load {
-	color: #f26b38;
+	color: #1736a8;
 	font-size: 12px;
 }
 
 .preloader .typed-load,
 .preloader .typed-cursor {
-	color: #f26b38;
+	color: #1736a8;
 	font-size: 12px;
 }
 
@@ -351,7 +351,7 @@ input:focus,
 textarea:focus,
 button:focus {
 	color: #141414;
-	border-bottom: 1px solid #f26b38;
+	border-bottom: 1px solid #1736a8;
 }
 
 textarea {
@@ -371,7 +371,7 @@ button {
 }
 
 button:hover {
-	border-bottom: 1px solid #f26b38;
+	border-bottom: 1px solid #1736a8;
 }
 
 label,
@@ -611,20 +611,20 @@ blockquote {
 
 	.glitch-effect-white:before,
 	.glitch-effect-white:after {
-		background: #f26b38;
+		background: #1736a8;
 	}
 
 	.glitch-effect:after,
 	.glitch-effect-white:after {
 		left: 2px;
-		text-shadow: -1px 0 #f26b38;
+		text-shadow: -1px 0 #1736a8;
 		animation: glitch-1 2s infinite linear alternate-reverse;
 	}
 
 	.glitch-effect:before,
 	.glitch-effect-white:before {
 		left: -2px;
-		text-shadow: 2px 0 #f26b38;
+		text-shadow: 2px 0 #1736a8;
 		animation: glitch-2 2s infinite linear alternate-reverse;
 	}
 
