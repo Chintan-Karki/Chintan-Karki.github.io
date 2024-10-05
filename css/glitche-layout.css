@@ -1256,6 +1256,12 @@ a.btn, .btn {
   font-weight: 400;
 }
 
+@media (max-width: 600px) {
+  .skills ul li .progress .percentage .percent {
+    visibility: hidden;
+  }
+}
+
 .skills.dotted ul li .progress .percentage {
   position: relative;
   overflow: hidden;
