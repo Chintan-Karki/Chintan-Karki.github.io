@@ -3,18 +3,14 @@
 
 <head>
 
-	<!-- Basic -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Chintan Karki 😃</title>
-	<meta name="description" content="
-	Chintan Karki is a software engineer with a passion for building scalable and efficient software systems. He is experienced in a wide range of programming languages and technologies, including Java, Python, JavaScript, and AWS. He is also passionate about DevOps and is experienced in using tools such as Docker, Kubernetes, and Jenkins.
-	">
-	<meta name="keywords" content="
-	software engineer, java, python, javascript, aws, docker, kubernetes, jenkins, devops, web development, programming languages, scalable systems, efficient software systems,
-	">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Chintan Karki — Software Engineer, Real-Time Web Systems</title>
+<meta name="description" content="Portfolio of Chintan Karki, a software engineer specializing in real-time communication (WebRTC, MQTT), performant frontend architecture, and AI-integrated web products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 	<!-- Load Fonts -->
 	<link
@@ -47,6 +43,481 @@
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="images/favicons/favicon.ico">
 
+	<style>
+  :root{
+    --paper: #F3F5F1;
+    --panel: #FFFFFF;
+    --ink: #14181F;
+    --ink-soft: #4A5058;
+    --line: #DADFDA;
+    --line-strong: #B9C0BA;
+    --blue: #3752E0;
+    --green: #1B8F5C;
+    --coral: #E24D3C;
+    --amber: #C98A1A;
+    --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --radius: 10px;
+    --maxw: 1080px;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body{ max-width: 100%; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-x: hidden;
+  }
+
+  a{ color: inherit; }
+  img{ max-width: 100%; display:block; }
+
+  :focus-visible{
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 clamp(16px, 5vw, 24px);
+  }
+
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+  }
+  .eyebrow .path-sep{ color: var(--line-strong); }
+  .eyebrow .path-ext{ color: var(--coral); }
+
+  /* ---------- NAV ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(243,245,241,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 60px;
+    gap: 12px;
+  }
+  .brand{
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 15px;
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    text-decoration:none;
+    flex: 0 0 auto;
+  }
+  .brand .dot{
+    width: 8px; height: 8px; border-radius: 2px;
+    background: var(--blue);
+    display:inline-block;
+  }
+  .tabs{
+    display:flex;
+    gap: 2px;
+    list-style:none;
+    height: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    min-width: 0;
+  }
+  .tabs::-webkit-scrollbar{ display:none; }
+  .tabs a{
+    font-family: var(--mono);
+    font-size: 13px;
+    text-decoration:none;
+    color: var(--ink-soft);
+    display:flex;
+    align-items:center;
+    height: 100%;
+    padding: 0 14px;
+    border-bottom: 2px solid transparent;
+    transition: color .15s ease, border-color .15s ease;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+  .tabs a:hover{ color: var(--ink); }
+  .tabs a.active{ color: var(--ink); border-bottom-color: var(--blue); }
+  .tabs .dirty{ color: var(--coral); margin-left: 4px; font-size: 10px; }
+  .nav-cta{
+    display:none;
+    flex: 0 0 auto;
+  }
+  @media (min-width: 720px){
+    .nav-cta{ display: inline-flex; }
+  }
+  @media (max-width: 560px){
+    .nav{ gap: 8px; }
+    .brand{ font-size: 13px; }
+    .tabs a{ font-size: 12px; padding: 0 10px; }
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    border: 1px solid transparent;
+    cursor:pointer;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+  }
+  .btn-primary{
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 4px 0 var(--line-strong); }
+  .btn-ghost{
+    border-color: var(--line-strong);
+    color: var(--ink);
+    background: transparent;
+  }
+  .btn-ghost:hover{ border-color: var(--ink); background: var(--panel); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 56px 0 40px;
+    border-top: none;
+  }
+  .hero-grid{
+    display:grid;
+    gap: 20px;
+    min-width: 0;
+  }
+  .hero-grid > div{ min-width: 0; }
+  .window{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 0 var(--line), 0 12px 30px -18px rgba(20,24,31,0.25);
+    overflow: hidden;
+  }
+  .window-bar{
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #FBFCFA, #F5F7F4);
+  }
+  .window-bar .traffic{ display:flex; gap:6px; margin-right: 6px; }
+  .window-bar .traffic span{ width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .window-bar .traffic .r{ background:#E4685D; }
+  .window-bar .traffic .y{ background:#DDB531; }
+  .window-bar .traffic .g{ background:#57C15D; }
+  .window-bar .filename{
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  .code-body{
+    font-family: var(--mono);
+    font-size: 14.5px;
+    padding: 26px 26px 30px;
+    display:grid;
+    grid-template-columns: 28px 1fr;
+    gap: 0 16px;
+    overflow-x: auto;
+  }
+  .code-body .ln{
+    color: var(--line-strong);
+    text-align:right;
+    user-select: none;
+  }
+  .code-line{ white-space: pre; }
+  .tok-kw{ color: var(--blue); }
+  .tok-str{ color: var(--green); }
+  .tok-com{ color: var(--ink-soft); font-style: italic; }
+  .tok-prop{ color: var(--ink); }
+  .tok-fn{ color: var(--coral); }
+  .tok-amber{ color: var(--amber); }
+  .tok-punc{ color: var(--ink-soft); }
+
+  @media (max-width: 640px){
+    .code-body{ font-size: 12px; padding: 18px 16px 22px; grid-template-columns: 18px 1fr; gap: 0 10px; }
+    .window-bar{ padding: 9px 12px; }
+    .window-bar .filename{ font-size: 11px; }
+  }
+  @media (max-width: 400px){
+    .code-body{ font-size: 10.8px; grid-template-columns: 14px 1fr; gap: 0 8px; padding: 16px 12px 18px; }
+  }
+
+  .hero-sub{
+    max-width: 60ch;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin: 22px 0 26px;
+  }
+  .hero-sub strong{ color: var(--ink); font-weight: 600; }
+
+  .hero-cta{ display:flex; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 480px){
+    .hero{ padding: 32px 0 24px; }
+    .hero-sub{ font-size: 15.5px; margin: 18px 0 22px; }
+    .hero-cta{ flex-direction: column; }
+    .hero-cta .btn{ width: 100%; justify-content: center; }
+  }
+
+  .status-pill{
+    display:inline-flex;
+    align-items:center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--green);
+    background: rgba(27,143,92,0.09);
+    border: 1px solid rgba(27,143,92,0.25);
+    padding: 6px 12px;
+    border-radius: 100px;
+    margin-bottom: 18px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    white-space: normal;
+    line-height: 1.4;
+  }
+  .status-pill .blip{
+    width:7px; height:7px; border-radius:50%; background: var(--green);
+    animation: blip 1.8s ease-in-out infinite;
+    flex: 0 0 auto;
+  }
+  @keyframes blip{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
+  @media (max-width: 480px){
+    .status-pill{ font-size: 11.5px; }
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding: 76px 0; border-top: 1px solid var(--line); }
+  .section-head{ margin-bottom: 36px; max-width: 62ch; }
+  .section-head h2{
+    font-family: var(--sans);
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-top: 8px;
+  }
+  .section-head p{ color: var(--ink-soft); margin-top: 10px; font-size: 15.5px; }
+
+  @media (max-width: 640px){
+    section{ padding: 48px 0; }
+    .section-head{ margin-bottom: 26px; }
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 860px){
+    .about-grid{ grid-template-columns: 1.1fr 0.9fr; }
+  }
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    min-width: 0;
+  }
+  .card-head{
+    display:flex; align-items:center; justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #FBFCFA, #F5F7F4);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .card-body{ padding: 22px; }
+  .card-body p + p{ margin-top: 14px; }
+  .card-body p{ color: var(--ink-soft); font-size: 15px; }
+  .card-body p strong{ color: var(--ink); }
+
+  .stack-list{ font-family: var(--mono); font-size: 13.5px; }
+  .stack-group{ margin-bottom: 18px; }
+  .stack-group:last-child{ margin-bottom: 0; }
+  .stack-group-label{ color: var(--ink-soft); font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+  .stack-tags{ display:flex; flex-wrap: wrap; gap: 7px; }
+  .stack-tag{
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 12.5px;
+  }
+
+  @media (max-width: 480px){
+    .card-body{ padding: 16px; }
+    .card-head{ padding: 10px 14px; font-size: 11px; }
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .project-grid{
+    display:grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 720px){
+    .project-grid{ grid-template-columns: 1fr 1fr; }
+  }
+  .project-card{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+    min-width: 0;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .project-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px -18px rgba(20,24,31,0.35);
+    border-color: var(--line-strong);
+  }
+  .project-top{ display:flex; align-items:flex-start; justify-content: space-between; gap: 10px 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  .project-name{ font-family: var(--mono); font-weight: 600; font-size: 15.5px; }
+  .project-tag{
+    font-family: var(--mono); font-size: 10.5px;
+    padding: 3px 8px; border-radius: 100px;
+    border: 1px solid var(--line-strong);
+    color: var(--ink-soft);
+    white-space: normal;
+    max-width: 100%;
+    line-height: 1.4;
+  }
+  .project-desc{ color: var(--ink-soft); font-size: 14.5px; margin-bottom: 16px; }
+  .project-import{
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 9px 11px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .project-import .tok-kw{ color: var(--blue); }
+  .project-import .tok-str{ color: var(--green); }
+  .project-links{ display:flex; gap: 16px; flex-wrap: wrap; font-family: var(--mono); font-size: 13px; }
+  .project-links a{ text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line-strong); padding-bottom: 1px; transition: border-color .15s ease, color .15s ease; }
+  .project-links a:hover{ border-color: var(--ink); color: var(--blue); }
+
+  @media (max-width: 480px){
+    .project-card{ padding: 16px; }
+  }
+
+  /* ---------- EXPERIENCE (git log) ---------- */
+  .log{ border-left: 1px solid var(--line); margin-left: 6px; }
+  .log-entry{ position: relative; padding: 0 0 30px 26px; }
+  .log-entry:last-child{ padding-bottom: 0; }
+  .log-entry::before{
+    content:'';
+    position:absolute; left: -5px; top: 3px;
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--panel);
+    border: 2px solid var(--blue);
+  }
+  .log-meta{ display:flex; flex-wrap: wrap; align-items:baseline; gap: 10px; font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); margin-bottom: 6px; }
+  .log-hash{ color: var(--coral); }
+  .log-role{ font-family: var(--sans); font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+  .log-role span{ color: var(--ink-soft); font-weight: 500; }
+  .log-desc{ color: var(--ink-soft); font-size: 14.5px; max-width: 62ch; }
+
+  @media (max-width: 480px){
+    .log{ margin-left: 2px; }
+    .log-entry{ padding-left: 18px; padding-bottom: 24px; }
+    .log-role{ font-size: 15px; }
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-window .code-body{ font-size: 15px; }
+  .prompt{ color: var(--green); }
+  .cursor{
+    display:inline-block; width: 8px; height: 16px;
+    background: var(--ink); margin-left: 2px; vertical-align: -2px;
+    animation: caret 1s step-end infinite;
+  }
+  @keyframes caret{ 0%,100%{ opacity:1; } 50%{ opacity:0; } }
+  @media (max-width: 640px){
+    .contact-window .code-body{ font-size: 12.5px; }
+  }
+  @media (max-width: 400px){
+    .contact-window .code-body{ font-size: 10.5px; }
+  }
+
+  .contact-links{
+    display:flex; flex-wrap: wrap; gap: 14px;
+    margin-top: 22px;
+  }
+  .contact-links a{
+    font-family: var(--mono);
+    font-size: 13.5px;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    padding: 9px 14px;
+    border-radius: 6px;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .contact-links a:hover{ border-color: var(--ink); background: var(--panel); }
+
+  @media (max-width: 480px){
+    .contact-links{ flex-direction: column; gap: 10px; }
+    .contact-links a{ text-align: center; }
+  }
+
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 28px 0 40px;
+  }
+  .footer-row{
+    display:flex; flex-wrap: wrap; align-items:center; justify-content: space-between; gap: 10px;
+  }
+  .footer-row p{ font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+  @media (max-width: 480px){
+    .footer-row{ flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+
+  /* reveal-on-scroll */
+  .reveal{
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  .reveal.in{ opacity: 1; transform: translateY(0); }
+</style>
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125314689-11"></script>
 	<script>
@@ -61,509 +532,346 @@
 
 <body>
 
-	<!-- Preloader -->
-	<div class="preloader">
-		<div class="centrize full-width">
-			<div class="vertical-center">
-				<div class="pre-inner">
-					<div class="load typing-load">
-						<p>loading...</p>
-					</div>
-					<span class="typed-load"></span>
-				</div>
-			</div>
-		</div>
-	</div>
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand"><span class="dot"></span>chintan.karki</a>
+    <ul class="tabs">
+      <li><a href="#about" class="active">about.tsx</a></li>
+      <li><a href="#projects">projects.tsx</a></li>
+      <li><a href="#experience">experience.log</a></li>
+      <li><a href="#education">education.yml</a></li>
+      <li><a href="#contact">contact.sh</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary nav-cta">Get in touch</a>
+  </div>
+</header>
 
-	<!-- Container -->
-	<div class="container">
+<main id="top">
 
-		<!-- Wrapper -->
-		<div class="wrapper">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="status-pill"><span class="blip"></span>open to Software Engineer roles in Adelaide &amp; remote</span>
 
-			<!-- Started -->
-			<div class="section started">
-				<div class="centrize full-width">
-					<div class="vertical-center">
-						<div class="started-content">
-							<div class="h-title glitch-effect" data-text="Chintan Karki">Chintan Karki</div>
-							<div class="h-subtitle typing-bread">
-								<p><a href="index.html">Hi there 🤚</a> </p>
-							</div>
-							<span class="typed-bread"></span>
-						</div>
-					</div>
-				</div>
-				<a href="#" class="mouse_btn"><ion-icon name="arrow-down-circle-outline"></ion-icon></a>
-			</div>
+        <div class="window">
+          <div class="window-bar">
+            <span class="traffic"><span class="r"></span><span class="y"></span><span class="g"></span></span>
+            <span class="filename">hero.ts</span>
+          </div>
+          <div class="code-body">
+            <span class="ln">1</span><span class="code-line"><span class="tok-kw">const</span> <span class="tok-prop">engineer</span> <span class="tok-punc">=</span> <span class="tok-punc">{</span></span>
+            <span class="ln">2</span><span class="code-line">  name<span class="tok-punc">:</span> <span class="tok-str">"Chintan Karki"</span><span class="tok-punc">,</span></span>
+            <span class="ln">3</span><span class="code-line">  role<span class="tok-punc">:</span> <span class="tok-str">"Software Engineer"</span><span class="tok-punc">,</span></span>
+            <span class="ln">4</span><span class="code-line">  focus<span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"WebRTC"</span><span class="tok-punc">,</span> <span class="tok-str">"MQTT"</span><span class="tok-punc">,</span> <span class="tok-str">"React"</span><span class="tok-punc">]</span><span class="tok-punc">,</span></span>
+            <span class="ln">5</span><span class="code-line">  basedIn<span class="tok-punc">:</span> <span class="tok-str">"Adelaide, AU"</span><span class="tok-punc">,</span></span>
+            <span class="ln">6</span><span class="code-line">  experience<span class="tok-punc">:</span> <span class="tok-str">"3+ years"</span><span class="tok-punc">,</span></span>
+            <span class="ln">7</span><span class="code-line">  <span class="tok-fn">optimizes</span><span class="tok-punc">()</span> <span class="tok-punc">{</span></span>
+            <span class="ln">8</span><span class="code-line">    <span class="tok-kw">return</span> <span class="tok-str">"latency &amp; scale"</span><span class="tok-punc">;</span></span>
+            <span class="ln">9</span><span class="code-line">  <span class="tok-punc">}</span></span>
+            <span class="ln">10</span><span class="code-line"><span class="tok-punc">};</span></span>
+          </div>
+        </div>
 
-			<!-- About -->
-			<div class="section about">
-				<div class="content">
-					<div class="title">
-						<div class="title_inner">About Me</div>
-					</div>
-					<div class="image">
-						<img src="assets/dinosaur.png" alt="" />
-					</div>
-					<div class="desc">
-						<p>
-							Innovative Software Engineer passionate about creating efficient, scalable, and visually appealing
-							applications. Leveraging expertise in
-							ReactJS (2 years+) and dedicated to best practices, I optimize performance and enhance user experiences.
-						</p>
-						<div class="info-list">
-							<ul>
-								<li><strong>Name:</strong> Chintan Karki</li>
-								<li><strong>Age:</strong> 24 Years</li>
-								<li><strong>Job:</strong> Software Engineer</li>
-								<li><strong>Citizenship:</strong> Nepal</li>
-								<li><strong>Residence: </strong> Kathmandu</li>
-								<li><strong>E-mail:</strong> chintankarki@gmail.com</li>
-							</ul>
-						</div>
-						<div class="bts"><a href="./assets/Resume_ChintanKarki.pdf" class="btn fill"
-								data-text="Download CV">Download CV</a></div>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
+        <p class="hero-sub">I build the parts of a product that are hard to fake: real-time systems that hold up under load, frontend architecture that scales past the demo, and data pipelines tuned down to the millisecond. <strong>3+ years shipping to 10,000+ daily active users</strong>, from WebRTC-powered collaboration tools to LLM-integrated platforms.</p>
 
-			<!-- Resume -->
-			<div class="section resume">
-				<div class="content">
-					<div class="cols">
-						<div class="col col-md">
-							<div class="title">
-								<div class="title_inner">Experience</div>
-							</div>
-							<div class="resume-items">
-								<div class="resume-item active">
-									<div class="date">2024 - Present</div>
-									<div class="name">Project Supervisor<br /> Itahari International College</div>
-									<p>
-										● Mentored 17+ Final Year Projects Across Diverse Domains: Supervised and guided students in
-										completing projects in web development, blockchain, artificial intelligence, and IoT, ensuring
-										industry-standard quality and innovative problem-solving.
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View projects</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-										<br />
-										<br />
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">src<span class="path-sep">/</span>about<span class="path-ext">.tsx</span></span>
+        <h2>A little about how I work</h2>
+        <p>The short version: I go looking for the bottleneck nobody assigned me to fix, then ship a measurable improvement — not just a feature.</p>
+      </div>
 
-										● Promoted Excellence in Technical and Soft Skills: Provided tailored mentorship to enhance
-										students' technical expertise, code quality, and presentation skills, resulting in several projects
-										being recognized for innovation at academic showcases.
-									</p>
-								</div>
-								<div class="resume-item">
-									<div class="date">2022 - Present</div>
-									<div class="name">Software Engineer I<br /> TREELEAF TECHNOLOGIES PVT. LTD</div>
-									<p>
-										● Enhanced 'Anydone' performance by integrating Janus WebRTC SFU and optimizing CI/CD workflows,
-										aligning with the fast-paced
-										development environment.
-										<br />
-										<br />
+      <div class="about-grid reveal">
+        <div class="card">
+          <div class="card-head">
+            <span>README.md</span>
+            <span>UTF-8</span>
+          </div>
+          <div class="card-body">
+            <p><strong>Hi, I'm Chintan.</strong> I'm a software engineer with 3+ years building scalable, high-performance web applications — most recently as a Project Supervisor guiding teams through cloud-native SaaS and LLM/RAG integrations.</p>
+            <p>My depth is in the systems most engineers avoid: real-time communication (WebRTC, MQTT), binary data optimization (Protocol Buffers, FlatBuffers), and design systems that hold up at scale. At Treeleaf Technologies I helped take <strong>anydone</strong> to 10,000+ daily active users, cutting real-time latency by 15% and data transmission latency by 40%.</p>
+            <p>I also write about what I build — my article on FlatBuffers performance in JavaScript is linked below.</p>
+          </div>
+        </div>
 
-										● Improved 'anydone' real-time communication performance by integrating Janus WebRTC SFU into the
-										ReactJS codebase, increasing the capacity from 10 to nearly 100 simultaneous call
-										participants—nearly a 10x enhancement.
-										<br />
-										<br />
+        <div class="card">
+          <div class="card-head">
+            <span>stack.json</span>
+            <span>20+ deps</span>
+          </div>
+          <div class="card-body">
+            <div class="stack-list">
+              <div class="stack-group">
+                <div class="stack-group-label">Frontend</div>
+                <div class="stack-tags">
+                  <span class="stack-tag">React / Next.js</span>
+                  <span class="stack-tag">TypeScript</span>
+                  <span class="stack-tag">Redux · Zustand · Jotai</span>
+                  <span class="stack-tag">Tailwind · Ant Design · MUI</span>
+                  <span class="stack-tag">Framer Motion</span>
+                </div>
+              </div>
+              <div class="stack-group">
+                <div class="stack-group-label">Backend</div>
+                <div class="stack-tags">
+                  <span class="stack-tag">Node.js / Express</span>
+                  <span class="stack-tag">Django / DRF</span>
+                  <span class="stack-tag">Spring Boot</span>
+                  <span class="stack-tag">Python · Java · C#</span>
+                </div>
+              </div>
+              <div class="stack-group">
+                <div class="stack-group-label">Real-Time &amp; Data</div>
+                <div class="stack-tags">
+                  <span class="stack-tag">WebRTC (Janus SFU)</span>
+                  <span class="stack-tag">MQTT / WebSockets</span>
+                  <span class="stack-tag">Protocol Buffers</span>
+                  <span class="stack-tag">FlatBuffers</span>
+                </div>
+              </div>
+              <div class="stack-group">
+                <div class="stack-group-label">Tooling</div>
+                <div class="stack-tags">
+                  <span class="stack-tag">Git · CI/CD</span>
+                  <span class="stack-tag">Docker</span>
+                  <span class="stack-tag">Figma</span>
+                  <span class="stack-tag">Bash</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-										● Integrated MQTT with protocol buffers and flatbuffers, reducing data transmission latency by
-										nearly 40% and ensuring seamless
-										cross-platform compatibility.
-										<br />
-										<br />
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">src<span class="path-sep">/</span>projects<span class="path-ext">.tsx</span></span>
+        <h2>Selected work</h2>
+        <p>Real-time systems, AI-integrated tools, and frontend platforms shipped to production — not tutorial clones.</p>
+      </div>
 
+      <div class="project-grid reveal">
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">anydone — collab board</span>
+            <span class="project-tag">production · 50 concurrent users</span>
+          </div>
+          <p class="project-desc">Interactive real-time collaborative whiteboard built with HTML Canvas and Web Workers, syncing state across up to 50 concurrent users with binary-efficient payloads.</p>
+          <div class="project-import"><span class="tok-kw">import</span> <span class="tok-punc">{</span> Fabric.js, FlatBuffers, WebWorkers <span class="tok-punc">}</span> <span class="tok-kw">from</span> <span class="tok-str">'./stack'</span></div>
+          <div class="project-links">
+            <a href="https://anydone.com/collab.html" target="_blank" rel="noopener">View live ↗</a>
+          </div>
+        </div>
 
-										● Increased user engagement through intuitive design systems using Ant Design, Material UI, and
-										styled components.
-									</p>
-								</div>
-								<div class="resume-item">
-									<div class="date">July 2021 - December 2021</div>
-									<div class="name">Frontend Intern Trainee<br /> CODAVATAR TECH PVT. LTD</div>
-									<p>
-										● Collaborated on various projects, implementing ReactJS, ReduxJS, Web Workers, Ant Design, and
-										TailwindCSS, showcasing adaptability
-										to diverse tech stacks.
-										<br />
-										<br />
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">anydone — WebRTC core</span>
+            <span class="project-tag">production · 10k+ DAU</span>
+          </div>
+          <p class="project-desc">Core real-time communication layer for an AI-integrated workflow platform, built on Janus WebRTC SFU with MQTT + Protobuf transport — 40% more stable, 15% lower latency.</p>
+          <div class="project-import"><span class="tok-kw">import</span> <span class="tok-punc">{</span> Janus SFU, MQTT, ProtocolBuffers <span class="tok-punc">}</span> <span class="tok-kw">from</span> <span class="tok-str">'./stack'</span></div>
+          <div class="project-links">
+            <a href="https://anydone.com" target="_blank" rel="noopener">View live ↗</a>
+          </div>
+        </div>
 
-										● Utilized 'formik' for optimized and user-friendly forms, ensuring seamless integration with
-										backend services and adherence to industry
-										best practices.
-									</p>
-								</div>
-								<div class="resume-item">
-									<div class="date">2024 - Present</div>
-									<div class="name">Final Year Project Supervisor (External) <br />Itahari International College</div>
-									<p>
-										● Supervised and guided students on their final year projects for undergraduate degrees, providing
-										constructive feedback and mentorship to
-										ensure successful project completion.
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">ui-wizard</span>
+            <span class="project-tag">AI · open source</span>
+          </div>
+          <p class="project-desc">Full-stack app that turns natural-language descriptions into production-ready UI, using GPT-4 to generate semantic HTML with ARIA accessibility and BEM conventions baked in.</p>
+          <div class="project-import"><span class="tok-kw">import</span> <span class="tok-punc">{</span> GPT-4, VanillaJS, ARIA <span class="tok-punc">}</span> <span class="tok-kw">from</span> <span class="tok-str">'./stack'</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Chintan-Karki" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </div>
 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col col-md">
-							<div class="title">
-								<div class="title_inner">Education</div>
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">clearu</span>
+            <span class="project-tag">on-device ML</span>
+          </div>
+          <p class="project-desc">Privacy-first image background remover running entirely in-browser via Transformers.js, with optional WebGPU acceleration for RMBG-1.4 and MODNet models.</p>
+          <div class="project-import"><span class="tok-kw">import</span> <span class="tok-punc">{</span> Transformers.js, WebGPU, IndexedDB <span class="tok-punc">}</span> <span class="tok-kw">from</span> <span class="tok-str">'./stack'</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Chintan-Karki" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </div>
 
-							</div>
-							<div class="resume-items">
-								<div class="resume-item">
-									<div class="date">2019 - 2022</div>
-									<div class="name">B.Sc(Hons) Computing<br /> London Metropolitan University</div>
-									<p>
-										<b>
-											First Class Honors (80%)
-										</b>
-										<br />
-										Relevant Courses: Application Development, Software Engineering, Data Structures and Algorithms,
-										Advanced Database, Artificial
-										Intelligence, Operating Systems, etc.
-									</p>
-								</div>
-								<div class="resume-item">
-									<div class="date">2016 - 2018</div>
-									<div class="name">National Education Board<br /> Araniko Higher Secondary School</div>
-									<p>
-										<b>
-											High School Certificate (GPA: 3.6)
-										</b>
-										<br />
-										Relevant Courses: Mathematics, Physics, Chemistry, Computer Science, English, Biology, etc.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">khojbin</span>
+            <span class="project-tag">cross-platform search</span>
+          </div>
+          <p class="project-desc">Atomic-design search portal aggregating product listings across Nepalese e-commerce platforms (Daraz, HamroBazaar &amp; more), with collaborative-filtering recommendations.</p>
+          <div class="project-import"><span class="tok-kw">import</span> <span class="tok-punc">{</span> React, Zustand, Django REST <span class="tok-punc">}</span> <span class="tok-kw">from</span> <span class="tok-str">'./stack'</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Chintan-Karki" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </div>
 
-			<!-- Skills -->
-			<div class="section skills">
-				<div class="content">
-					<div class="title">
-						<div class="title_inner">Skills</div>
-					</div>
-					<div class="skills">
-						<ul>
-							<li>
-								<div class="name">Web Design (Figma, Adobe XD)</div>
-								<div class="progress">
-									<div class="percentage" style="width:70%;">
-										<span class="percent">70%</span>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="name">Frontend ( Javascript, ReactJS )</div>
-								<div class="progress">
-									<div class="percentage" style="width:90%;">
-										<span class="percent">90%</span>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="name">Backend (Node, Express, Django)</div>
-								<div class="progress">
-									<div class="percentage" style="width:75%;">
-										<span class="percent">75%</span>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="name">Database (MySQL, MongoDB, SQLite)</div>
-								<div class="progress">
-									<div class="percentage" style="width:80%;">
-										<span class="percent">80%</span>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">timetracko</span>
+            <span class="project-tag">analytics dashboard</span>
+          </div>
+          <p class="project-desc">Workforce analytics platform for productivity tracking — built key dashboard components with Redux Saga/Thunk, improving load times by 15%.</p>
+          <div class="project-import"><span class="tok-kw">import</span> <span class="tok-punc">{</span> React, Redux-Saga, AntDesign <span class="tok-punc">}</span> <span class="tok-kw">from</span> <span class="tok-str">'./stack'</span></div>
+          <div class="project-links">
+            <a href="https://github.com/Chintan-Karki" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-			<!-- Skills -->
-			<div class="section skills">
-				<div class="content">
-					<div class="title">
-						<div class="title_inner">Languages Skills</div>
-					</div>
-					<div class="skills dotted">
-						<ul>
-							<li>
-								<div class="name">English</div>
-								<div class="progress">
-									<div class="percentage" style="width: 90%;">
-										<span class="percent">90%</span>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="name">Nepali</div>
-								<div class="progress ">
-									<div class="percentage" style="width: 95%;">
-										<span class="percent">95%</span>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="name">Hindi</div>
-								<div class="progress ">
-									<div class="percentage" style="width: 80%;">
-										<span class="percent">80%</span>
-									</div>
-								</div>
-							</li>
-							<!-- <li>
-								<div class="name">French</div>
-								<div class="progress ">
-									<div class="percentage" style="width: 85%;">
-										<span class="percent">85%</span>
-									</div>
-								</div>
-							</li> -->
-						</ul>
-					</div>
-				</div>
-			</div>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">src<span class="path-sep">/</span>experience<span class="path-ext">.log</span></span>
+        <h2>Where I've worked</h2>
+        <p>Most recent first — like any good log.</p>
+      </div>
 
-			<!-- Skills -->
-			<!-- <div class="section skills">
-				<div class="content">
-					<div class="title">
-						<div class="title_inner">Coding Skills</div>
-					</div>
-					<div class="skills circles">
-						<ul>
-							<li>
-								<div class="name">WordPress</div>
-								<div class="progress p90">
-									<div class="percentage" style="width: 90%;">
-										<span class="percent">90%</span>
-									</div>
-									<span>90%</span>
-								</div>
-							</li>
-							<li>
-								<div class="name">PHP / MYSQL</div>
-								<div class="progress p75">
-									<div class="percentage" style="width: 75%;">
-										<span class="percent">75%</span>
-									</div>
-									<span>75%</span>
-								</div>
-							</li>
-							<li>
-								<div class="name">Angular / JavaScript</div>
-								<div class="progress p85">
-									<div class="percentage" style="width: 85%;">
-										<span class="percent">85%</span>
-									</div>
-									<span>85%</span>
-								</div>
-							</li>
-							<li>
-								<div class="name">HTML / CSS</div>
-								<div class="progress p95">
-									<div class="percentage" style="width: 95%;">
-										<span class="percent">95%</span>
-									</div>
-									<span>95%</span>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div> -->
+      <div class="log reveal">
+        <div class="log-entry">
+          <div class="log-meta"><span class="log-hash">a3f9c1e</span><span>Oct 2024 — Jul 2025</span></div>
+          <div class="log-role">Software Engineer / Project Supervisor <span>· ING Nepal</span></div>
+          <p class="log-desc">Guided teams architecting cloud-native SaaS and advanced AI features (LLM integration, RAG pipelines). Mentorship reduced technical debt by ~10% and drove adoption of secure, high-performance design patterns.</p>
+        </div>
+        <div class="log-entry">
+          <div class="log-meta"><span class="log-hash">7d2b48a</span><span>Jun 2022 — Sep 2024</span></div>
+          <div class="log-role">Software Engineer <span>· Treeleaf Technologies (treeleaf.ai)</span></div>
+          <p class="log-desc">Engineered core communication services for 'anydone' via Janus WebRTC SFU — 40% more stable real-time connections, 15% lower latency for 10,000+ daily active users. Built the collaborative canvas board and integrated MQTT + Protobuf/FlatBuffers, cutting data transmission latency 40%. Design systems work lifted user satisfaction 15% and engagement 20%.</p>
+        </div>
+        <div class="log-entry">
+          <div class="log-meta"><span class="log-hash">1e6f0c9</span><span>Jan 2022 — May 2022</span></div>
+          <div class="log-role">Associate Software Engineer <span>· Idea Breed Technology</span></div>
+          <p class="log-desc">Optimized Node.js/Express backend services, improving API response times by 15%. Contributed to Java Spring Boot features and bug fixes, reducing reported issues by 10% through rigorous code review.</p>
+        </div>
+        <div class="log-entry">
+          <div class="log-meta"><span class="log-hash">4b8a015</span><span>Jul 2021 — Dec 2021</span></div>
+          <div class="log-role">Frontend Intern / Trainee <span>· Codavatar Tech</span></div>
+          <p class="log-desc">Built and optimized ReactJS components with Ant Design and Tailwind CSS, improving page load times by 10%. Streamlined form UX with Formik, cutting submission errors by 20%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-			<!-- Skills -->
-			<div class="section skills">
-				<div class="content">
-					<div class="title">
-						<div class="title_inner">Knowledge</div>
-					</div>
-					<div class="skills list">
-						<ul>
-							<li>
-								<div class="name">JavaScript</div>
-							</li>
-							<li>
-								<div class="name">TypeScript</div>
-							</li>
-							<li>
-								<div class="name">ReactJS</div>
-							</li>
-							<li>
-								<div class="name">NextJS</div>
-							</li>
-							<li>
-								<div class="name">ReduxJS</div>
-							</li>
-							<li>
-								<div class="name">ExpressJS</div>
-							</li>
-							<li>
-								<div class="name">NodeJS</div>
-							</li>
-							<li>
-								<div class="name">MongoDB</div>
-							</li>
-							<li>
-								<div class="name">MySQL</div>
-							</li>
-							<li>
-								<div class="name">Webpack</div>
-							</li>
-							<li>
-								<div class="name">Rollup</div>
-							</li>
-							<li>
-								<div class="name">Python</div>
-							</li>
-							<li>
-								<div class="name">Java</div>
-							</li>
-							<li>
-								<div class="name">Jotai</div>
-							</li>
-							<li>
-								<div class="name">Zustand</div>
-							</li>
-							<li>
-								<div class="name">React Query</div>
-							</li>
-							<li>
-								<div class="name">Saga</div>
-							</li>
-							<li>
-								<div class="name">Thunks</div>
-							</li>
-							<li>
-								<div class="name">SASS</div>
-							</li>
-							<li>
-								<div class="name">SCSS</div>
-							</li>
-							<li>
-								<div class="name">Tailwind</div>
-							</li>
-							<li>
-								<div class="name">Web-workers</div>
-							</li>
-							<li>
-								<div class="name">Websockets</div>
-							</li>
-							<li>
-								<div class="name">Worklets</div>
-							</li>
-							<li>
-								<div class="name">WebRTC</div>
-							</li>
-							<li>
-								<div class="name">FabricJS</div>
-							</li>
-							<li>
-								<div class="name">Django</div>
-							</li>
-							<li>
-								<div class="name">Django REST</div>
-							</li>
-							<li>
-								<div class="name">MQTT</div>
-							</li>
-							<li>
-								<div class="name">Protobuffs</div>
-							</li>
-							<li>
-								<div class="name">Flatbuffers</div>
-							</li>
-							<li>
-								<div class="name">Docker</div>
-							</li>
-							<li>
-								<div class="name">AWS</div>
-							</li>
-							<li>
-								<div class="name">Figma</div>
-							</li>
-							<li>
-								<div class="name">Bash</div>
-							</li>
-							<li>
-								<div class="name">Git</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">src<span class="path-sep">/</span>education<span class="path-ext">.yml</span></span>
+        <h2>Education &amp; writing</h2>
+        <p>Formal training plus one thing I published because I couldn't stop thinking about it.</p>
+      </div>
 
+      <div class="about-grid reveal">
+        <div class="card">
+          <div class="card-head">
+            <span>education.yml</span>
+            <span>2 degrees</span>
+          </div>
+          <div class="card-body">
+            <p><strong>Master of Information Communication Technology</strong> — University of the Sunshine Coast<br>Artificial Intelligence, Data Science, System Design, Cybersecurity, Databases.</p>
+            <p><strong>B.Sc (Hons) Computing, First Class Honours (80.39%)</strong> — London Metropolitan University<br>Software Engineering, Data Structures &amp; Algorithms, Advanced Databases, Operating Systems.</p>
+          </div>
+        </div>
 
-		</div>
+        <div class="card">
+          <div class="card-head">
+            <span>writing.md</span>
+            <span>medium.com</span>
+          </div>
+          <div class="card-body">
+            <p><strong>Maximizing Performance with FlatBuffers in your JavaScript Application</strong></p>
+            <p>A deep dive into using FlatBuffers to cut serialization overhead and data transmission latency in real-world JS apps — the same technique behind the 40% latency reduction on 'anydone'.</p>
+            <p><a href="https://chintankarki.medium.com/maximizing-performance-with-flatbuffers-in-your-javascript-application-ee779bf88793" target="_blank" rel="noopener" style="color:var(--blue); text-decoration:none; border-bottom:1px solid var(--blue); padding-bottom:1px;">Read the article ↗</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<!-- Footer -->
-		<footer>
-			<div class="soc">
-				<!-- <a target="_blank" href="https://dribbble.com/">
-					<ion-icon name="logo-dribbble"></ion-icon>
-				</a> -->
-				<a target="_blank" href="https://github.com/Chintan-Karki"><ion-icon name="logo-github"></ion-icon></a>
-				<a target="_blank" href="https://www.instagram.com/chintankarki/"><ion-icon
-						name="logo-instagram"></ion-icon></span></a>
-				<a target="_blank" href="https://www.linkedin.com/in/chintankarki/"><ion-icon
-						name="logo-linkedin"></ion-icon></span></a>
-			</div>
-			<div class="copy">© 2025 Chintan Karki.</div>
-			<div class="clr"></div>
-		</footer>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">src<span class="path-sep">/</span>contact<span class="path-ext">.sh</span></span>
+        <h2>Let's build something</h2>
+        <p>Have a project in mind, or just want to say hi? My inbox is open.</p>
+      </div>
 
-		<!-- Lines -->
-		<div class="line top"></div>
-		<div class="line bottom"></div>
-		<div class="line left"></div>
-		<div class="line right"></div>
+      <div class="window contact-window reveal">
+        <div class="window-bar">
+          <span class="traffic"><span class="r"></span><span class="y"></span><span class="g"></span></span>
+          <span class="filename">zsh — contact</span>
+        </div>
+        <div class="code-body">
+          <span class="ln">$</span><span class="code-line"><span class="prompt">chintan@portfolio</span> <span class="tok-punc">~</span> % reach --email <span class="tok-amber">chintankarki@gmail.com</span><span class="cursor"></span></span>
+        </div>
+      </div>
 
-	</div>
+      <div class="contact-links">
+        <a href="mailto:chintankarki@gmail.com">✉ chintankarki@gmail.com</a>
+        <a href="https://github.com/Chintan-Karki" target="_blank" rel="noopener">↗ github.com/Chintan-Karki</a>
+        <a href="https://linkedin.com/in/chintankarki" target="_blank" rel="noopener">↗ linkedin.com/in/chintankarki</a>
+        <a href="https://chintankarki.medium.com" target="_blank" rel="noopener">↗ medium.com/@chintankarki</a>
+      </div>
+    </div>
+  </section>
 
-	<!-- jQuery Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.validate.js"></script>
-	<script src="js/typed.js"></script>
-	<script src="js/magnific-popup.js"></script>
-	<script src="js/imagesloaded.pkgd.js"></script>
-	<script src="js/isotope.pkgd.js"></script>
+</main>
 
-	<!-- Main Scripts -->
-	<script src="js/glitche-scripts.js"></script>
+<footer>
+  <div class="wrap footer-row">
+    <p>© 2026 Chintan Karki · Glenelg, Adelaide, SA</p>
+    <p>Last deployed: just now</p>
+  </div>
+</footer>
 
-	<!-- bslthemes.com buttons html begin -->
-	<div class="bsl-popup" data-theme="glitche" data-category="html">
-		<div class="bsl-popup__buttons"></div>
-		<div class="bsl-popup__content bsl-popup__content-related">
-			<div class="bsl-popup__menu"></div>
-			<div class="bsl-popup__tabs">
-				<div class="bsl-popup__tab bsl-popup__tab-demo"></div>
-				<div class="bsl-popup__tab bsl-popup__tab-all"></div>
-				<div class="bsl-popup__tab bsl-popup__tab-related"></div>
-				<div class="bsl-popup__tab bsl-popup__tab-version"></div>
-			</div>
-		</div>
-		<div class="bsl-popup__content bsl-popup__content-help"></div>
-	</div>
-	<!-- bslthemes.com buttons html end -->
+<script>
+  // active tab highlight on scroll
+  const tabs = document.querySelectorAll('.tabs a');
+  const sections = [...tabs].map(t => document.querySelector(t.getAttribute('href')));
+  const setActive = () => {
+    let idx = 0;
+    const y = window.scrollY + 120;
+    sections.forEach((s, i) => { if (s && s.offsetTop <= y) idx = i; });
+    tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+  };
+  document.addEventListener('scroll', setActive, { passive: true });
+  setActive();
 
-	<!-- bslthemes.com buttons assets begin -->
-	<link rel="stylesheet" href="https://bslthemes.com/bslthms-advanced-btns/assets/style.css">
-	<script src="https://bslthemes.com/bslthms-advanced-btns/assets/script.js"></script>
-	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-	<!-- bslthemes.com buttons assets end -->
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
 
 </body>
 
